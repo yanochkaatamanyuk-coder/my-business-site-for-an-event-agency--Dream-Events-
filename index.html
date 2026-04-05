@@ -3,74 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dream Events</title>
+<title>DREAM EVENTS</title>
 
 <style>
+html{scroll-behavior:smooth;}
+
 body{
 margin:0;
-font-family: Arial, sans-serif;
+font-family:Arial;
 background:#fffde7;
-color:#333;
+color:#222;
 }
 
+/* HEADER */
 header{
-background:#ffd600;
-padding:20px;
-text-align:center;
-font-size:24px;
-font-weight:bold;
+position:fixed;
+top:0;
+width:100%;
+background:rgba(255, 214, 0, 0.95);
+backdrop-filter: blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+z-index:1000;
 }
 
-nav{
-margin-top:10px;
+/* LOGO */
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:bold;
+font-size:20px;
+}
+
+.logo-box{
+width:35px;
+height:35px;
+background:#fff176;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:18px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 nav a{
 margin:0 10px;
 text-decoration:none;
-color:#333;
+color:#222;
 font-weight:bold;
 }
 
-.hero{
-background:#fff176;
-padding:80px 20px;
-text-align:center;
+nav a:hover{
+color:#ff6f00;
 }
 
-.hero h1{
-font-size:36px;
-}
-
-button{
-background:#ffd600;
-border:none;
-padding:12px 20px;
-margin-top:15px;
-cursor:pointer;
-font-weight:bold;
-border-radius:10px;
-}
-
+/* SECTIONS */
 section{
-padding:40px;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
+padding:100px 20px;
+}
+
+/* HERO */
+#home{
+background:linear-gradient(135deg,#fff176,#ffd600);
+}
+
+h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+p{
+max-width:600px;
+font-size:18px;
+}
+
+/* BUTTON */
+button{
+background:#fff;
+border:none;
+padding:14px 25px;
+border-radius:12px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+margin-top:15px;
+}
+
+button:hover{
+transform:scale(1.1);
+background:#ffea00;
+}
+
+/* SERVICES */
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+margin-top:20px;
 }
 
 .card{
-background:#fff176;
-margin:10px auto;
-padding:20px;
-max-width:300px;
-border-radius:15px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+background:#fff59d;
+padding:25px;
+width:250px;
+border-radius:18px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* PORTFOLIO */
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+margin-top:20px;
+}
+
+.photo{
+width:250px;
+height:160px;
+border-radius:15px;
+background-size:cover;
+background-position:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.photo:hover{
+transform:scale(1.05);
+}
+
+/* CONTACT */
+form{
+display:flex;
+flex-direction:column;
+width:100%;
+max-width:400px;
+}
+
+input,textarea{
+margin:10px 0;
+padding:12px;
+border-radius:10px;
+border:1px solid #ffd600;
+}
+
+/* FOOTER */
 footer{
 background:#ffd600;
 text-align:center;
-padding:15px;
-margin-top:30px;
+padding:20px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+h1{font-size:32px}
+.photo{width:90%}
 }
 </style>
 
@@ -79,27 +184,64 @@ margin-top:30px;
 <body>
 
 <header>
-🍋 Dream Events
+
+<div class="logo">
+<div class="logo-box">🍋</div>
+DREAM EVENTS
+</div>
+
 <nav>
-<a href="#">Головна</a>
-<a href="#">Послуги</a>
-<a href="#">Портфоліо</a>
-<a href="#">Контакти</a>
+<a href="#home">Головна</a>
+<a href="#services">Послуги</a>
+<a href="#portfolio">Портфоліо</a>
+<a href="#contact">Контакти</a>
 </nav>
 </header>
 
-<div class="hero">
-<h1>Яскраві події 💛</h1>
-<p>Ми створюємо свята під ключ</p>
-<button>Забронювати</button>
-</div>
+<!-- HOME -->
+<section id="home">
+<h1>DREAM EVENTS ✨</h1>
+<p>Ми створюємо яскраві, стильні та незабутні події преміум-рівня!</p>
+<button>Забронювати подію</button>
+</section>
 
-<section>
+<!-- SERVICES -->
+<section id="services">
 <h2>Наші послуги</h2>
 
+<div class="cards">
 <div class="card">💍 Весілля</div>
 <div class="card">🎉 Корпоративи</div>
 <div class="card">🎈 Дитячі свята</div>
+<div class="card">✨ Івенти під ключ</div>
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+<h2>Наші роботи 📸</h2>
+
+<div class="gallery">
+
+<div class="photo" style="background-image:url('https://images.unsplash.com/photo-1520854221256-17451cc331bf');"></div>
+
+<div class="photo" style="background-image:url('https://images.unsplash.com/photo-1504196606672-aef5c9cefc92');"></div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Зв’яжіться з нами 📩</h2>
+
+<form>
+<input type="text" placeholder="Ваше ім’я">
+<input type="email" placeholder="Email">
+<textarea placeholder="Повідомлення"></textarea>
+<button>Надіслати</button>
+</form>
 
 </section>
 
